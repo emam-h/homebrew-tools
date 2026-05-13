@@ -4,20 +4,23 @@ class Yon < Formula
   version "0.1.0"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/emam-h/yon/releases/download/v0.1.0/yon-darwin-arm64"
-    sha256 "026af80bdaeb534313f2d77da47c422ad8a55a537d9e5ea993bfe0e306fe0de2"
+    url "https://github.com/emam-h/yon/releases/download/v0.1.0/yon-darwin-arm64.tar.gz"
+    sha256 "4f0ae83d0a97843d895e27c9b4594026785424703b3d458f810ad192a3694e8c"
 
   elsif OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/emam-h/yon/releases/download/v0.1.0/yon-darwin-amd64"
-    sha256 "65a8dd2e7ace0ce4ed3ab74d805bf7aa3dbc948c718672957f06bf4cea7d951f"
+    url "https://github.com/emam-h/yon/releases/download/v0.1.0/yon-darwin-amd64.tar.gz"
+    sha256 "f0112667aeb34a4dc4402fc8a75b41833727d5169bb7593f56f2a52d92a6f662"
 
   elsif OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/emam-h/yon/releases/download/v0.1.0/yon-linux-arm64"
-    sha256 "9df504e0a32a5aaecaeb365963f0448f7f824f6264c6f3c3413c2538477d6885"
+    url "https://github.com/emam-h/yon/releases/download/v0.1.0/yon-linux-arm64.tar.gz"
+    sha256 "cc7c495707644334ff6a460ce699b747e8db49140291b8eaaa709baa0c1453d9"
 
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/emam-h/yon/releases/download/v0.1.0/yon-linux-amd64"
-    sha256 "119468161da230af212e73959078d2a3b3a4788460bb12585f7421938cf46b41"
+    url "https://github.com/emam-h/yon/releases/download/v0.1.0/yon-linux-amd64.tar.gz"
+    sha256 "04ea62dce4ca96e24264ddd918e8c9546a121bc0a4e2223ba3dafe759ac845a6"
+
+  else
+    odie "Unsupported platform"
   end
 
   def install
